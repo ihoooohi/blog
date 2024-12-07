@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 17, 24, 39;
+  --background-rgb: 249, 250, 251;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 249, 250, 251;
+    --background-rgb: 17, 24, 39;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose a {
+    @apply text-teal-500 hover:text-teal-600 no-underline;
+  }
+
+  .prose h2, .prose h3, .prose h4 {
+    @apply mt-8 mb-4;
+  }
+
+  .prose p {
+    @apply mb-4;
+  }
+
+  .prose ul {
+    @apply mb-4 list-disc list-inside;
+  }
+
+  .prose ol {
+    @apply mb-4 list-decimal list-inside;
+  }
+
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-gray-300 dark:border-gray-700 italic;
+  }
+
+  .prose code {
+    @apply px-1 py-0.5 bg-gray-100 dark:bg-gray-800 rounded;
+  }
+
+  .prose pre {
+    @apply p-4 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-x-auto;
+  }
+}
